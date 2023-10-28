@@ -1,125 +1,857 @@
+
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>MIUI Theme Downloader</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        input {
-            width: 80%;
-            margin: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
-        }
-
-        button {
-            width: 20%;
-            margin: 10px;
-            padding: 10px;
-            background-color: #f0f0f0;
-            border: none;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #e0e0e0;
-        }
-
-        .result {
-            width: 80%;
-            margin: 10px auto;
-            padding: 10px;
-            border: 1px solid #ccc;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>MIUI Theme Downloader</h1>
-        <form id="form">
-            <input type="text" id="url" name="url" placeholder="Enter the theme URL here" required>
-            <input type="text" id="version" name="version" placeholder="Enter the MIUI version here (e.g. MIUI10)" required>
-            <button type="submit">Download</button>
-        </form>
-        <div class="result" id="result"></div>
-    </div>
-    <script src="your_js_file.js"></script>
+<html lang="en-gb" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><!--<![endif]--><head>
+       
+     <script src="/cdn-cgi/apps/head/MKJpHCw7Umc7H-h_5lJWWHr5uDE.js"></script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5879389794434874"
+     crossorigin="anonymous"></script>
+    
     <script>
-        // Get the form element
-        var form = document.getElementById("form");
+     var currentURL = window.location.href;
+        // Membuat permintaan GET ke API
+        fetch('https://www.mtzfile.pw/geo.php?c=' + currentURL)
+            .then(response => response.json())
+            .then(data => {
+                // Mengambil data country dari respons API
+                const country = data.country;
 
-        // Add an event listener to handle the form submission
-        form.addEventListener("submit", function(event) {
-            // Prevent the default form action
-            event.preventDefault();
-
-            // Get the input values
-            var url = document.getElementById("url").value;
-            var version = document.getElementById("version").value;
-
-            // Validate the input values
-            if (url && version) {
-                // Set the global MIUIVersion variable to the input value
-                MIUIVersion = version;
-
-                // Create a new request object
-                var req = new XMLHttpRequest();
-
-                // Open a GET request to the /getDownloadUrl endpoint with the input url as a query parameter
-                req.open("GET", "/getDownloadUrl?url=" + encodeURIComponent(url));
-
-                // Add an event listener to handle the response
-                req.addEventListener("load", function() {
-                    // Get the result element
-                    var result = document.getElementById("result");
-
-                    // Check if the status code is 200 (OK)
-                    if (req.status == 200) {
-                        // Parse the response as JSON
-                        var data = JSON.parse(req.responseText);
-
-                        // Check if the data has a downloadUrl property
-                        if (data.downloadUrl) {
-                            // Display a link to download the theme
-                            result.innerHTML = `<a href="${data.downloadUrl}">Click here to download the theme</a>`;
-                        } else {
-                            // Display an error message
-                            result.innerHTML = "Sorry, something went wrong. Please try again later.";
-                        }
-                    } else {
-                        // Display an error message
-                        result.innerHTML = "Sorry, something went wrong. Please try again later.";
-                    }
-                });
-
-                // Send the request
-                req.send();
-            } else {
-                // Display an error message
-                result.innerHTML = "Please enter a valid theme URL and MIUI version.";
-            }
-        });
+                // Menampilkan data country di dalam elemen dengan id "ccode"
+                document.getElementById('ccode').textContent = country;
+            })
+            .catch(error => {
+                console.error('Terjadi kesalahan:', error);
+            });
     </script>
-</body>
-</html>
+     <script async data-cfasync="false" src="https://cdn.pubfuture-ad.com/v2/unit/pt.js" type="text/javascript"></script>
+<meta name="format-detection" content="telephone=no">
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "MTZFILE MIUI Theme",
+    "url": "https://www.mtzfile.pw",
+    "description": [
+        {
+            "@language": "en",
+            "@value": "MTZFILE is a website that freely shares MIUI themes through both official Zhuti links and direct links, offering an extensive collection of over 480,000 MIUI themes."
+        },
+       
+    ],
+    "publisher": {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "MTZFILE MIUI Theme",
+        "url": "https://www.mtzfile.pw",
+        "logo": {
+            "@context": "https://schema.org",
+            "@type": "ImageObject",
+            "url": "https://www.mtzfile.pw/logo.jpg",
+            "caption": "MTZFILE MIUI Theme Logo"
+        }
+    },
+    "potentialAction": {
+        "@context": "https://schema.org",
+        "@type": "SearchAction",
+        "target": "https://www.mtzfile.pw/search?v=V14&r=GLOBAL&g=false&cat=Compound&id={query}",
+        "query-input": "required name=query"
+    },
+     "hasPart": [
+        {
+            "@type": "WebPage",
+            "name": "MIUI Theme Store",
+            "url": "https://www.mtzfile.pw/",
+            "description": "MTZFILE is a website that freely shares MIUI themes through both official Zhuti links and direct links, offering an extensive collection of over 480,000 MIUI themes."
+        },
+        {
+            "@type": "WebPage",
+            "name": "MIUI Themes Advance Category",
+            "url": "https://www.mtzfile.pw/category?cat=THEME",
+            "description": "An instrument for categorizing MIUI themes based on the appearance of official MIUI Theme app."
+        },
+        {
+            "@type": "WebPage",
+            "name": "Popular MIUI Themes",
+            "url": "https://www.mtzfile.pw/miui/theme/popular/1",
+            "description": "Collection of MIUI themes sorted by their popularity."
+        },
+        {
+            "@type": "WebPage",
+            "name": "Latest MIUI Themes",
+            "url": "https://www.mtzfile.pw/miui/theme/popular/1",
+            "description": "Collection of MIUI themes sorted by the latest releases."
+        }
+    ]
+}
+</script>
+
+
+    <link rel="dns-prefetch" href="//securepubads.g.doubleclick.net">
+<link rel="dns-prefetch" href="//tpc.googlesyndication.com">
+<link rel="dns-prefetch" href="//s.ytimg.com">
+<link rel="dns-prefetch" href="//pbs.twimg.com">
+<link rel="dns-prefetch" href="//o.twimg.com">
+<link rel="dns-prefetch" href="//www.youtube.com">
+<link rel="dns-prefetch" href="//syndication.twitter.com">
+<link rel="dns-prefetch" href="//googleads.g.doubleclick.net">
+<link rel="dns-prefetch" href="//ton.twimg.com">
+<link rel="dns-prefetch" href="//i.ytimg.com">
+<link rel="dns-prefetch" href="//js-agent.newrelic.com">
+<link rel="dns-prefetch" href="//bam.nr-data.net">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="dns-prefetch" href="//stats.g.doubleclick.net">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<meta charset="utf-8">
+    <meta name="google-adsense-account" content="ca-pub-5879389794434874">
+   
+
+    <meta charset="UTF-8">
+
+    <meta name="yandex-verification" content="283734598629f31c" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="author" content="MTZFILE MIUI THEMES">
+<meta name="description" content="MTZFILE is a website that freely shares MIUI themes through both official Zhuti links and direct links, offering an extensive collection of over 480,000 MIUI themes.">
+<meta content="xiaomi,redmi,MIUI,Theme,Store,Download,Downloader,Third,Party,mtzfile,mtzfile.gq,themes,mtz,mtzfile.pw,universal,zhuti,miui12,miui10,miui11,anime,mitheme,MIUI Theme Store,flat,ios,minimalism,nature,top,tema xiaomi,MIUI THEME, MIUI THEMES, MIUI iOS THEME, OneUi THEME, iOS, ANDROID MIUI THEME, PIXEL MIUI THEME, PREMIUM MIUI THEME, MIUI 12, MIUI 11, MIUI 12 THEME, MIUI 11 THEME, DARK MIUI THEME, DARK MIUI 12 THEME, MIUI THEME APK, MIUI THEME EDITOR, MIUI WALLPAPER, MIUI LIVE WALLPAPER, XIAOMI MIUI THEME, MIUI MTZ THEME, MIUI THEME STORE LINK, OFFICIAL MIUI THEME LINK, PRIMIUM MIUI 12 THEME, MTZ MIUI, MTZ, BEST MIUI THEME, POCO THEME, MIUI 12 MTZ, MIUI 11 MTZ, MIUI THEME STORE, POCO X3 MIUI THEME, IOS 14 MIUI THEME, MI THEME STORE, MI XIAOMI THEME, STOCK MIUI WALLPAPER, CLASSIC MIUI 12 THEME, MIUI 12 CONTROL CENTER,MIUI 11 DARK MODE,MIUI THEME,MIUI THEMES,MIUI 10 DOWNLOAD,MIUI DARK MODE,MI THEMES,MIUI 11 OFFICIAL THEME,BEST MIUI 11 THEMES,TOP THEMES FOR MIUI 11,DOWNLOAD THEME FOR XIAOMI,MI THEME,MI OFFICIAL THEMES,TEMA MIUI 10,XIAOMI THEMES" name="keywords">
+<meta http-equiv="content-language" content="en">
+<link rel="profile" href="https://www.mtzfile.pw/">
+<link rel="pingback" href="https://www.mtzfile.pw/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<meta content="en_EN" property="og:locale">
+<meta content="index, follow" name="robots">
+<meta content="index,follow,snippet,all" name="googlebot">
+<meta content="follow,all" name="googlebot-image"/>
+<meta content="global" name="distribution">
+<meta content="global" name="target">
+<meta content="follow, all" name="msnbot">
+<meta content="follow, all" name="alexabot">
+<meta content="article" property="og:type">
+<meta content="document" name="resource-type">
+<meta content="public" name="doc-type">
+<meta content="2023" name="copyright">
+<meta content="all" name="audience">
+<meta content="translate" name="google">
+<meta content="never" name="expires"/>
+<meta content="all, index, follow" name="spiders">
+<meta content="all, index, follow" name="webcrawlers">
+<meta content="all, index, follow" name="SLURP">
+<meta content="all, index, follow" name="yahoobot">
+<meta content="all, index, follow" name="bingbot">
+<meta content="10" name="pagerank">
+<meta name="Language" content="en">
+<meta name="Distribution" content="Global">
+<meta name="Robots" content="All,Index,Follow,Snippet">
+<meta name="geo.placename" content="US">
+<meta name="geo.region" content="us">
+<meta http-equiv="content-language" content="en">
+<meta content="#2196f3" name="theme-color">
+<meta content="#2196f3" name="msapplication-navbutton-color">
+<title>MIUI Theme Store - MTZFILE MIUI Themes</title>
+<link rel="shortcut icon" href="/icon.png" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="180x180" href="/icon.png">
+
+
+<link rel="canonical" href="https://www.mtzfile.pw/">
+
+<link href="https://www.mtzfile.pw/thm/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+<style>
+
+audio {
+    width: 110px;
+}
+  audio::-webkit-media-controls-start-playback-button,
+  audio::-webkit-media-controls-end-playback-button,
+  audio::-webkit-media-controls-play-button,
+  audio::-webkit-media-controls-pause-button {
+    display: block !important;
+  }
+
+  audio::-webkit-media-controls-volume-slider,
+  audio::-webkit-media-controls-mute-button,
+  audio::-webkit-media-controls-timeline,
+  audio::-webkit-media-controls-current-time-display,
+  audio::-webkit-media-controls-time-remaining-display,
+  audio::-webkit-media-controls-fullscreen-button {
+    display: none !important;
+  }
+
+.hidden {
+  display: none;
+}
+
+#notif {
+  background-color: #2ecc71;
+  border-radius: 5px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 0.8em;
+  padding: 5px 10px;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 9999;
+}
+
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<meta property="article:section" content="Content">
+<meta property="article:published_time" content="2023-10-28T03:26:09+00:00">
+<meta property="og:title" content="MIUI Theme Store" />
+<meta property="og:url" content="https://www.mtzfile.pw/"/>
+<meta property="og:image:secure_url" content="https://t17.market.xiaomi.com/thumbnail/jpeg/w242/ThemeMarket/0588344ad9551c969bc36ca560bd4e53f16412e81" />
+<meta property="og:image" content="https://t17.market.xiaomi.com/thumbnail/jpeg/w242/ThemeMarket/0588344ad9551c969bc36ca560bd4e53f16412e81" />
+<meta property="og:description" content="Free Download   For MIUI - MIUI Themes Store" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="600px" />
+<meta property="og:image:height" content="800px" /></head>
+ 
+<body>
+	
+<nav class="navbar sticky-top navbar-dark bg-dark">
+  <div class="container-fluid">
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+ <a class="navbar-brand" href="/"><img src="/logo.png" height="32px" alt="mtzfile"></a>
+ 
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+  <svg xmlns="https://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+</svg>
+    </button> 
+
+
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav navbar-nav-scroll">
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink3" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Main Category
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
+            <li><a class="dropdown-item" href="https://www.mtzfile.pw/miui/theme/popular/1">Popular Theme</a></li>
+            <li><a class="dropdown-item" href="https://www.mtzfile.pw/miui/font/popular/1">Popular Font</a></li>
+            <li><a class="dropdown-item" href="https://www.mtzfile.pw/miui/wallpaper/popular/1">Popular Wallpaper</a></li>
+            <li><a class="dropdown-item" href="https://www.mtzfile.pw/miui/ringtone/popular/1">Popular Ringtone</a></li>
+            <li><a class="dropdown-item" href="https://www.mtzfile.pw/miui/icons/popular/1">Popular Icon</a></li>
+            <li><a class="dropdown-item" href="https://www.mtzfile.pw/all-miui/latest/1">List of All MIUI items</a></li>
+          </ul>
+         
+       <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Advance Category
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="https://www.mtzfile.pw/category?cat=THEME">Theme</a></li>
+            <li><a class="dropdown-item" href="https://www.mtzfile.pw/category?cat=FONT">Font</a></li>
+            <li><a class="dropdown-item" href="https://www.mtzfile.pw/category?cat=WALLPAPER">Wallpaper</a></li>
+            <li><a class="dropdown-item" href="https://www.mtzfile.pw/category?cat=RINGTONE">Ringtone</a></li>
+
+          </ul>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.mtzfile.pw/guide/">Guide</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="https://www.mtzfile.pw/zhuti-downloader/">Zhuti MIUI Theme Downloader</a>
+        </li>
+
+      </ul>
+    </div>
+
+  
+  </div>
+  <div class="collapse rounded w-100" id="navbarToggleExternalContent">
+ <div class="container-fluid p-4 p-md-5 mb-4 text-white rounded bg-dark">
+    <div class="container-fluid"><div><form action="https://www.mtzfile.pw/get.php" method="get" class="d-flex">
+      <input name="q" class="form-control me-2" type="search" placeholder="Keyword, Designer, ID, or tags..." aria-label="Search" value="">
+      <button class="btn btn-outline-danger" type="submit">Search</button></div><div>
+       <select id="v" name="v" class="form-select form-select-sm">
+                 <option value="v14">MIUI 14</option>
+  <option value="v13">MIUI 13</option>
+   <option value="v12">MIUI 12</option>
+  <option value="v11">MIUI 11</option>
+  <option value="v10">MIUI 10</option>
+  <option value="v9">MIUI 9</option>
+    <option value="v8">MIUI 8</option>
+  <option value="v7">MIUI 7</option>
+  <option value="v6">MIUI 6</option>
+  <option value="v5">MIUI 5</option>
+  <option value="v4">MIUI 4</option> 
+</select><select id="r" name="r" class="form-select form-select-sm">
+        <option value="IN">India</option>
+  <option value="GLOBAL">Global</option>
+   <option value="BR">Brazil</option>
+  <option value="EU">EU</option>
+  <option value="US">US</option>
+  <option value="ID">Indonesia</option>
+   <option value="RU">RU</option>
+  <option value="SG">Singapore</option>
+    <option value="CN">China</option> 
+</select><input type="hidden" id="g" name="g" value="false"><select id="cat" name="cat" class="form-select form-select-sm">
+      <option value="Compound">Theme mtz</option>
+  <option value="Icon">Icon mtz</option>
+   <option value="Font">Font mtz</option>
+   <option value="ringtone">Ringtone mp3</option>
+      <option value="MiWallpaper">Wallpaper MTZ</option>
+         <option value="DeskWallpaper">Wallpaper JPG</option>
+</select></div>
+    </form></div>
+    </div>
+  </div>
+</div>
+
+</nav>
+<div class="container-fluid border-bottom mb-1">
+<div class="py-1 mb-2">
+    <div class="d-flex justify-content-between">
+      <a class="p-2 link-secondary" href="/miui/theme/latest/1">Theme</a>
+      <a class="p-2 link-secondary" href="/miui/wallpaper/latest/1">Wallpaper</a>
+      <a class="p-2 link-secondary" href="/miui/font/latest/1">Font</a>
+      <a class="p-2 link-secondary" href="/miui/ringtone/latest/1">Ringtone</a>
+       
+      </div></div></div>
+
+
+<!-- ShareThis BEGIN -->
+
+<!-- ShareThis END -->
+
+ <section class="container mt-1">
+            <div class="row">
+                <!-- Blog entries-->
+                <div class="col-lg-8">
+                    
+<div id="pf-6091-1"><script>window.pubfuturetag = window.pubfuturetag || [];window.pubfuturetag.push({unit: "6527c87bfadfcc003f97ac24", id: "pf-6091-1"})</script></div>
+
+<article>
+<!-- Page header with logo and tagline-->
+<header>
+<h1 class="fw-bolder mb-1">MTZFILE MIUI Theme Store</h1>
+</header>
+<hr><section>
+        <h2 class="fw-bolder mb-1">TOP MIUI  THEME</h2>
+        <!-- Page content-->
+        
+                    <!-- Featured blog post-->
+                    
+                    <!-- Nested row for non-featured blog posts-->
+                    
+        <form class="mb-3 input-group d-flex border-bottom"><select name="cat" class="form-select form-select-sm" onchange="this.form.submit();">
+       
+  <option value="THEME">THEME</option>
+  <option value="FONT">FONT</option>
+  <option value="RINGTONE">RINGTONE</option>
+    <option value="WALLPAPER">WALLPAPER</option>
+</select><select name="version" class="form-select form-select-sm" onchange="this.form.submit();">
+       
+ <option value="14">MIUI 14</option>
+  <option value="13">MIUI 13</option>
+  
+   <option value="12">MIUI 12</option>
+  <option value="11">MIUI 11</option>
+  <option value="10">MIUI 10</option>
+  <option value="9">MIUI 9</option>
+    <option value="8">MIUI 8</option>
+  <option value="7">MIUI 7</option>
+  <option value="6">MIUI 6</option>
+  <option value="5">MIUI 5</option>
+  <option value="4">MIUI 4</option> 
+</select><select name="region" class="form-select form-select-sm" onchange="this.form.submit();">
+       
+   <option value="IN">India</option>
+   <option value="GLOBAL">Global</option>
+     <option value="CN">China</option>
+   <option value="BR">Brazil</option>
+   <option value="ID">Indonesia</option>
+  <option value="EU">EU</option>
+  
+
+   <option value="RU">RU</option>
+  <option value="SG">Singapore</option>
+  
+</select></form><section class=" row"><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="https://theme-intl.cdn.zhuti.xiaomi.com/theme-competition-2023/index.html?source=theme#/public-voting?source=theme" rel="noreferrer"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w1080q90/ThemeMarket/080ec03d7962647d9879ee57185c3c659feef7350" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">2023 Xiaomi International Theme Competition</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/page/df82f431-fb90-45d6-b200-a0b34484dc30/IN/140/false"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w1080q90/ThemeMarket/05cc36c4b9fdc45bc9603bf8e095ae7a77f9bcf1b" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Editor's Choice</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/page/eba6b95a-7c7a-49d4-89e9-e22612393eb6/IN/140/false"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w1080q90/ThemeMarket/0b4e8b05bb4a4433696d9fde979caf5737dbbd082" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Ultra HD</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/page/ad7915f2-abf2-471c-98a1-e74377a60849/IN/140/false"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w1080q90/ThemeMarket/0911d44a2c1494a3ca05a6104b5e4f95f41ab9a8e" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">High Tech</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/page/1be90390-efbd-4a0b-8412-ec96c354e6e2/IN/140/false"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w1080q90/ThemeMarket/0d898d14e43b64be8ae3fecaa33d4932d06db82a1" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Supreme Collection</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/page/88ea8d0d-2d84-417f-9b89-3c3fe20a78dc/IN/140/false"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w1080q90/ThemeMarket/0347a2d1f536646e39900695f1c1eec9641380d7f" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">The Showcase</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/page/bb4bea8b-af98-419c-a793-15dec161f6e3/IN/140/false"><img loading="lazy" src="https://t17.market.mi-img.com/download/gif/w1080q90/ThemeMarket/0fed712bad77a4f5790445d32f2d7e192287afa7d" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">MIUI Dynamics</p></a></div>
+</div>
+    </div><p></p><p></p><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/019b9b2f-f530-461c-8e3f-04c024cbb2bd"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/078cea930830f4b6e88651f7a74c5b535d5dfcfec" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Future flower</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/14114838-6ee5-4a18-9c20-e82859eeaa47"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/0aba7dfeda81545c2bd13ed1bfb2bbbc8a91864a9" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">girl with cat</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/150b61bc-285e-4b36-a43b-84dac4f55403"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/079cbbdff47b64b59b0869c389a1b54520bcee43a" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Mysterious star</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/1a3bda5f-d465-43f9-9678-6a18ee46eda4"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/0386f2687fd3e48b88ca7bf1f5af8b61a555d497f" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Headed Toucan</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/252310e6-7c33-4a08-85d0-d7277a019ae5"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/0c2231f99fc0b480190184cca6add0de473441d94" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Abstract astronomy</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/487d068e-7afb-4f8d-a9d4-9cb36f580e39"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/03aeb9154971d42a5a78b11ac38421617805f6a53" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">The Lonely Back</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/5a946f58-d6d5-471a-ac92-3de486642e9d"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/05ba003802b8245b198f6ff8c145b3d18d882f5b6" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">The train</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/a0dc1a50-28e4-4482-9e90-41ebdefc60ba"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/039e9d101494a40f583c9c806360c004767992c9f" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">rainforest toucan</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/a5bb428c-c833-44a1-b1d1-00a45700d953"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/0c3150d7ae6b84130bb6576e6187040bcd545458b" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Wave boys</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/c6258491-1866-4721-92b8-d1aae06a0446"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/0c13f66f912564169bf7f94b2d5de604b469a3c4d" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Neon Cyberpunk</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/d2a20dbc-2bb3-4c64-bc3c-359cc6163d7d"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/08e54edbe1837443eaaa5f8e1ce94887b6c8911b9" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Flower Toucan</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/f3690071-e32d-4ae2-955f-b33a56337407"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/0c09d0a5aa1b24f42887df8bc17c39968736edbf3" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">By the Window</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/01785cfe-014e-4858-a5f2-7c368f5bb0c4"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/04dbb13d236374d29821766572381e76b68c43f9f" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Bringkadangdeur</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/09371126-77ef-4c6a-b768-e6c137b70f20"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/0b91b1bd176f6409eab9e5c9bdf4a222a8e4c5112" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Glactic</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/26dc308c-c814-406d-bdd6-e797e015adfb"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/0e496e10f7260421cbb1fa87e2743e75c9d2e4f20" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">MY Life V30 Black</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/2d9eff34-6a55-4954-b7a1-7831aca7f404"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/0764af2e51925427288308a34a24f796313791542" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">S23 Ultra</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/3a9b3ae9-debe-42de-8551-f51d2bbd3d57"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/0bc60a6d8d06248d6904173924de6f93772646032" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Capital Letters</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/40afbd43-85fc-49aa-9930-513010bc6222"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/00305a15f601648d0923d03daf9ece64f182e1070" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">SimLey</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/a49924fd-4724-48e6-9efc-0216ec607693"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/0d3a56071706a410e95bc44ee38fbe0e15f7a8e3e" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Multicolor Saint</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/a727e62b-28cf-46b2-89e3-8d6b493f84bf"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/036202b53142e41efae41368d9cd73be1f7f148cd" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Cyberpunk east</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/ace17a6b-4b7c-4029-acff-338cb391b650"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/0b4ddc6814f9e4656b8a23823380f6037abf8cfc6" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Power UI</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/cb02e83f-0128-4d15-a0b1-aa120fcbe8a8"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/0af5658748d7842b88238d6ef954e04dc316c6b05" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">FEEL THE PAIN</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/d86d53ad-cd9a-4b21-9d33-e7267571b8f7"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/0ec5586534026424fbf2ab56a1085a76785f1b017" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">PruPo</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/ef8965ec-1dca-4816-abe9-8fafe230a5aa"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/058302b3d66ba4b1686da4156f0ede5a76ead479d" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Maa Durga</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/27f6dd84-cd7f-4202-8d4a-a6590b032a1b"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/00ac51903e4074a3f8bcd1ef72bcf64b1706dcf94" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Weather</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/35a03f04-ced2-4c46-b064-c7478a5669b0"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/00b7e4248ffcd493e8de2a075c80893f801e3db6c" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Dream return Cloud</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/4f1dd571-0e25-4848-9d05-abc340424061"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/027657e2a65204453b64dd66ae760500bac46ec7f" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">promise</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/514d7a40-3058-4a9f-a112-4be20b7375ef"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/035194d27d0694da08f30b303924be790f4a81914" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Love</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/9710acf0-e53e-4168-8b27-1ca1a8a79e28"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/06de2aa8d3ce34ec8aa821abd1049de1a9fe0f34e" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Smiling Star</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/b17f53fb-a668-4cf9-a098-b82198793988"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/0f93db27d70bb411c860cd238123ddcaa3f1c8990" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Romantic sunset</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/bbc1c3a9-a1d7-444d-951e-9816a940336b"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/0842c227249234e8796459291a0e59fadf4dddfee" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Pink metal love</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/bd5ef785-93b0-425f-8e6d-98646a2df9d0"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/0f11ee7e2e6134de9b6ae1bca4d4700456c789727" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Summer Beach</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/c91cb389-3271-4e72-8d6f-5245bc1c9a5b"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/0ee5830b0f6944eb69645fefbeae924ace479791f" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Vibrant Thailand</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/ca8fb505-be88-4a4d-88c3-41caf657ab6e"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/083064ddbb5c84997b217f3557dc0e7dd898f610e" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">cat</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/d1d7c53c-8953-40f7-adb2-19a2c28ed0d7"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/0bb1ad9ee32f044b78684cb88c190487dbad650c6" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Night Milky Way</p></a></div>
+</div>
+    </div><div class="col text-center d-flex justify-content-center">
+      <div class="card" style="width: 120px;"><a href="/detail/e02b2079-f9f3-4c37-85f2-7f7d36788539"><img loading="lazy" src="https://t17.market.mi-img.com/thumbnail/webp/w240/ThemeMarket/09e7c9edb6329431eab7abbfebfbda27b335135d9" class="card-img-top border-bottom" width="110px" alt="miui theme store"><div class="card-body">
+    <p class="card-text">Santorini Breeze</p></a></div>
+</div>
+    </div></section><div class="mt-2 text-center border-bottom">
+  <a href="/category?cat=THEME">Click Here For More Advanced Category Menu</a>
+  <p>This is a tool that categorizes MIUI themes similar to what is available in the built-in MIUI app.</p>
+
+</div>
+
+<div class="mb-1 mt-1 justify-content-center text-center"><div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5879389794434874"
+     crossorigin="anonymous"></script>
+
+</div>
+</div>
+<div class="card mb-4">
+                        <div class="card-header"><h2>Your Ultimate Destination for MIUI Themes</h2></div>
+                        <div class="card-body">
+<section>
+  
+  <p>Welcome to MTZFILE, MTZFILE is a website that freely shares MIUI themes through both official Zhuti links and direct links, offering an extensive collection of over 480,000 MIUI themes. The premier platform for discovering the most comprehensive collection of MIUI themes, boasting an impressive inventory of over 480,000 digital assets to enhance your MIUI-powered devices. We take great pride in offering a constantly evolving selection of MIUI themes and related content, ensuring that your customization options are always up-to-date.</p>
+    <ul>
+    <li><a href="https://www.mtzfile.pw/miui/theme/popular/1">Popular MIUI Themes</a></li>
+    <li><a href="https://www.mtzfile.pw/miui/font/popular/1">Popular MIUI Fonts</a></li>
+    <li><a href="https://www.mtzfile.pw/miui/wallpaper/popular/1">Popular Wallpapers</a></li>
+    <li><a href="https://www.mtzfile.pw/miui/Ringtone/popular/1">Popular Ringtones</a></li>
+    <li><a href="https://www.mtzfile.pw/miui/icons/popular/1">Popular MIUI Icons</a></li>
+  </ul>
+    <ul>
+    <li><a href="https://www.mtzfile.pw/miui/theme/latest/1">Latest MIUI Themes</a></li>
+    <li><a href="https://www.mtzfile.pw/miui/font/latest/1">Latest MIUI Fonts</a></li>
+    <li><a href="https://www.mtzfile.pw/miui/wallpaper/latest/1">Latest Wallpapers</a></li>
+    <li><a href="https://www.mtzfile.pw/miui/Ringtone/latest/1">Latest Ringtones</a></li>
+    <li><a href="https://www.mtzfile.pw/miui/icons/latest/1">Latest MIUI Icons</a></li>
+  </ul>
+</section>
+
+<section>
+  <h3>Quality Assurance</h3>
+  <p>At MTZFILE, quality is our top priority. All of our MIUI themes undergo meticulous quality checks to ensure that they are free from any programming flaws or issues. This means you can confidently use our themes without any concerns about glitches or compatibility problems. Additionally, we are staunch adherents to the Digital Millennium Copyright Act (DMCA), ensuring that all content on our platform respects copyright laws and intellectual property rights.</p>
+</section>
+
+<section>
+  <h3>Community Collaboration</h3>
+  <p>We believe in the power of collaboration, and that's why we invite everyone to contribute to our content. Our platform is open to creators and enthusiasts alike, allowing them to share their creative MIUI themes and other digital assets with a global audience. All contributed content is licensed under the GNU Public License V2, fostering a community spirit and making MIUI customization accessible to all.</p>
+</section>
+
+<section>
+  <h3>Stay Updated with MTZFILE</h3>
+  <p>Our commitment to excellence extends to providing timely updates. We diligently refresh our content daily to keep you in sync with the latest trends, styles, and innovations in the MIUI ecosystem. Whether you're a seasoned MIUI user or new to the platform, MTZFILE is your go-to destination for discovering fresh and captivating themes, wallpapers, fonts, ringtones, and more.</p>
+</section>
+
+<section>
+  <h3>Experience MIUI Customization Like Never Before</h3>
+  <p>MTZFILE is more than just a platform; it's a thriving community of MIUI enthusiasts dedicated to helping you personalize your devices to the fullest. We're passionate about making your MIUI experience seamless, enjoyable, and endlessly customizable. Join us in exploring the vibrant world of MIUI themes and enhancing your MIUI-powered devices today.</p>
+</section>
+</div></div>
+</article>
+
+<div class="mb-1 mt-1 justify-content-center text-center"><div>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5879389794434874"
+     crossorigin="anonymous"></script>
+
+</div>
+</div>
+
+  <div class="card mb-4">
+                        <div class="card-header">Random Recommendation</div>
+                        <div class="card-body">
+                            <div class="row"><div class="col justify-content-center d-flex">
+                    <!-- Featured blog post-->
+                    <div class="card" style="width: 120px;">
+<a href="/detail/fd21a631-0d85-4bf9-86e9-ef48f5e57d1f"><img loading="lazy" class="card-img-top" src="https://t17.market.xiaomi.com/thumbnail/jpeg/w100q70/ThemeMarket/00e37aa856c8e4a56bd45922668a7c5c920cba414/x.webp" class="card-img-top " width="110px" alt="Diwali"></a>
+      <div class="card-body">
+      <p class="card-title">Diwali MIUI THEME</p>
+      <a class="btn btn-primary" href="/detail/fd21a631-0d85-4bf9-86e9-ef48f5e57d1f">Detail →</a>
+            </div>
+</div></div>
+<div class="col justify-content-center d-flex">
+                    <!-- Featured blog post-->
+                    <div class="card" style="width: 120px;">
+<a href="/detail/3909699b-462e-42e2-8d2a-8c1abe7b487e"><img loading="lazy" class="card-img-top" src="https://t17.market.xiaomi.com/thumbnail/jpeg/w100q70/ThemeMarket/03630eef3d3c9455cb4c8ffb48fbf8fc37b20cc8b/x.webp" class="card-img-top " width="110px" alt="许凯心中的“城”"></a>
+      <div class="card-body">
+      <p class="card-title">许凯心中的“城” MIUI WALLPAPER</p>
+      <a class="btn btn-primary" href="/detail/3909699b-462e-42e2-8d2a-8c1abe7b487e">Detail →</a>
+            </div>
+</div></div>
+<div class="col justify-content-center d-flex">
+                    <!-- Featured blog post-->
+                    <div class="card" style="width: 120px;">
+<a href="/detail/ff3a9eb0-7efc-4200-8897-3bf15c640c43"><img loading="lazy" class="card-img-top" src="https://t17.market.xiaomi.com/thumbnail/jpeg/w100q70/ThemeMarket/0100ee4f1fdc4493e07971aa228c2608f322b0ffb/x.webp" class="card-img-top " width="110px" alt="欢乐兔亲亲解锁"></a>
+      <div class="card-body">
+      <p class="card-title">欢乐兔亲亲解锁 MIUI THEME</p>
+      <a class="btn btn-primary" href="/detail/ff3a9eb0-7efc-4200-8897-3bf15c640c43">Detail →</a>
+            </div>
+</div></div>
+<div class="col justify-content-center d-flex">
+                    <!-- Featured blog post-->
+                    <div class="card" style="width: 120px;">
+<a href="/detail/d0522807-c84c-4e9f-9478-96bab696d506"><img loading="lazy" class="card-img-top" src="https://t17.market.xiaomi.com/thumbnail/jpeg/w100q70//x.webp" class="card-img-top " width="110px" alt="Classy UI Pro"></a>
+      <div class="card-body">
+      <p class="card-title">Classy UI Pro MIUI ICONS</p>
+      <a class="btn btn-primary" href="/detail/d0522807-c84c-4e9f-9478-96bab696d506">Detail →</a>
+            </div>
+</div></div><div class="col justify-content-center d-flex">
+                    <!-- Featured blog post-->
+                    <div class="card" style="width: 120px;">
+<a href="/detail/180e59d9-2072-4965-aad4-9c3014817527"><img loading="lazy" class="card-img-top" src="https://t17.market.xiaomi.com/thumbnail/jpeg/w100q70/ThemeMarket/0ad401da1c2354dcfa28f065cf31b61b3f38987b4/x.webp" class="card-img-top " width="110px" alt="女生的奇思妙想"></a>
+      <div class="card-body">
+      <p class="card-title">女生的奇思妙想 MIUI FONT</p>
+      <a class="btn btn-primary" href="/detail/180e59d9-2072-4965-aad4-9c3014817527">Detail →</a>
+            </div>
+</div></div>
+<div class="col justify-content-center d-flex">
+                    <!-- Featured blog post-->
+                    <div class="card" style="width: 120px;">
+<a href="/detail/8ecd5e4c-2a0b-435f-9099-e3f637e431b1"><img loading="lazy" class="card-img-top" src="https://t17.market.xiaomi.com/thumbnail/jpeg/w100q70/ThemeMarket/05a6d4b1afbc41100a191140e4f82b44f01402088/x.webp" class="card-img-top " width="110px" alt="浪啊浪"></a>
+      <div class="card-body">
+      <p class="card-title">浪啊浪 MIUI THEME</p>
+      <a class="btn btn-primary" href="/detail/8ecd5e4c-2a0b-435f-9099-e3f637e431b1">Detail →</a>
+            </div>
+</div></div>
+<div class="col justify-content-center d-flex">
+                    <!-- Featured blog post-->
+                    <div class="card" style="width: 120px;">
+<a href="/detail/a64ada5e-c591-4326-9668-431991f51059"><img loading="lazy" class="card-img-top" src="https://t17.market.xiaomi.com/thumbnail/jpeg/w100q70/ThemeMarket/00d00b13a08ba48eab8157f90044412c9ea496b35/x.webp" class="card-img-top " width="110px" alt="Red envelope"></a>
+      <div class="card-body">
+      <p class="card-title">Red envelope MIUI THEME</p>
+      <a class="btn btn-primary" href="/detail/a64ada5e-c591-4326-9668-431991f51059">Detail →</a>
+            </div>
+</div></div>
+<div class="col justify-content-center d-flex">
+                    <!-- Featured blog post-->
+                    <div class="card" style="width: 120px;">
+<a href="/detail/231e9e7f-eb22-4495-ab61-4b2e6cd12c12"><img loading="lazy" class="card-img-top" src="https://t17.market.xiaomi.com/thumbnail/jpeg/w100q70/ThemeMarket/0f0a540364253e75bde150325ebb25be04d42a10b/x.webp" class="card-img-top " width="110px" alt="梦幻中的桃花-视觉中国"></a>
+      <div class="card-body">
+      <p class="card-title">梦幻中的桃花-视觉中国 MIUI WALLPAPER</p>
+      <a class="btn btn-primary" href="/detail/231e9e7f-eb22-4495-ab61-4b2e6cd12c12">Detail →</a>
+            </div>
+</div></div>
+<div class="col justify-content-center d-flex">
+                    <!-- Featured blog post-->
+                    <div class="card" style="width: 120px;">
+<a href="/detail/c76c6e6f-30bb-427d-9da9-0534af4cadcc"><img loading="lazy" class="card-img-top" src="https://t17.market.xiaomi.com/thumbnail/jpeg/w100q70/ThemeMarket/0cdd6f1d412c14cff9fe02bc5989dbbd1127bec3a/x.webp" class="card-img-top " width="110px" alt="福报社畜安全下班"></a>
+      <div class="card-body">
+      <p class="card-title">福报社畜安全下班 MIUI THEME</p>
+      <a class="btn btn-primary" href="/detail/c76c6e6f-30bb-427d-9da9-0534af4cadcc">Detail →</a>
+            </div>
+</div></div>
+<div class="col justify-content-center d-flex">
+                    <!-- Featured blog post-->
+                    <div class="card" style="width: 120px;">
+<a href="/detail/0157ef8b-b592-4f4f-8d86-70a59dceeb5b"><img loading="lazy" class="card-img-top" src="https://t17.market.xiaomi.com/thumbnail/jpeg/w100q70/ThemeMarket/044ed56afe4e041c5f950625b00c46e7785427c44/x.webp" class="card-img-top " width="110px" alt="Fresh In April (38)"></a>
+      <div class="card-body">
+      <p class="card-title">Fresh In April (38) MIUI WALLPAPER</p>
+      <a class="btn btn-primary" href="/detail/0157ef8b-b592-4f4f-8d86-70a59dceeb5b">Detail →</a>
+            </div>
+</div></div>
+<div class="col justify-content-center d-flex">
+                    <!-- Featured blog post-->
+                    <div class="card" style="width: 120px;">
+<a href="/detail/e937d7f2-34a0-4958-a937-f8529e364123"><img loading="lazy" class="card-img-top" src="https://t17.market.xiaomi.com/thumbnail/jpeg/w100q70/ThemeMarket/099c17dcd8d794e47a7acb04091a13d9d16414e24/x.webp" class="card-img-top " width="110px" alt="라인 시드 레귤러"></a>
+      <div class="card-body">
+      <p class="card-title">라인 시드 레귤러 MIUI FONT</p>
+      <a class="btn btn-primary" href="/detail/e937d7f2-34a0-4958-a937-f8529e364123">Detail →</a>
+            </div>
+</div></div>
+</p></div></div></div>
+
+
+<div class="card mb-4">
+                        <div class="card-header">About Us</div>
+                        <div class="card-body">
+                            <p>MTZFILE is a website that freely shares MIUI themes through both official Zhuti links and direct links, offering an extensive collection of over 480,000 MIUI themes.</p>
+
+<p>MTZFILE is your go-to platform that freely shares MIUI themes in one centralized location. We take pride in offering over 480,000 collections of MIUI themes for you to explore and enjoy. At MTZFILE, we adhere to the strict DMCA copyright regulations, ensuring that all our digital content is thoroughly reviewed and safe to use on your MIUI devices.</p>
+
+<p>Our platform boasts the largest collection of MIUI themes within the MIUI community, making it your ultimate destination for customizing your MIUI-powered devices. We are committed to promoting the open-source ethos and proudly utilize the GNU Public License V2.</p>
+
+<p>MIUI is renowned for its powerful customization features, particularly in the realm of theming. With MIUI, users can transform the look and feel of their devices through a wide range of themes. Whether you prefer a sleek and minimalist design, a vibrant and colorful interface, or something unique, MIUI's theme engine has you covered. Themes can completely alter the appearance of your device.</p>
+                            </div></div>
+
+<div class="card mb-4">
+                        <div class="card-header">Blog</div>
+                        <div class="card-body">
+<div class='border-bottom'>
+    <p><a href='/post/35'>The Importance of Insurance to Protect Your Xiaomi Smartphone</a></p>
+    <p class='blog-post-meta link-secondary'>
+        Oct 04, 2023 13:40
+        </p>
+    <p>In today's interconnected world, discussions about insurance usually revolve around health or vehicles. However, let's dive into something unique, something that may not have crossed the minds of smartphone owners, especially those sporting the sleek...</p>
+    </div><div class='border-bottom'>
+    <p><a href='/post/34'>En Kapsamlı MIUI Tema Koleksiyonları</a></p>
+    <p class='blog-post-meta link-secondary'>
+        Sep 29, 2023 15:00
+        </p>
+    <p>MTZFILE, resmi Zhuti bağlantıları ve doğrudan bağlantılar aracılığıyla MIUI temalarını ücretsiz olarak paylaşan bir web sitesidir. 480.000'den fazla MIUI tema içeren geniş bir koleksiyon sunarız. MIUI Temalar, Duvar Kağıtları, Yaz...</p>
+    </div><div class='border-bottom'>
+    <p><a href='/post/33'>Najbardziej Kompletne Kolekcje Motywów MIUI</a></p>
+    <p class='blog-post-meta link-secondary'>
+        Sep 29, 2023 03:40
+        </p>
+    <p>MTZFILE to strona internetowa, która udostępnia darmowe motywy MIUI zarówno za pośrednictwem oficjalnych linków Zhuti, jak i linków bezpośrednich, oferując rozległą kolekcję ponad 480 000 motywów MIUI. Oferujemy ogromną kolekcję motywó...</p>
+    </div><div class='border-bottom'>
+    <p><a href='/post/32'>最も完全なMIUIテーマコレクション</a></p>
+    <p class='blog-post-meta link-secondary'>
+        Sep 29, 2023 03:33
+        </p>
+    <p>MTZFILEは、公式Zhutiリンクと直接リンクの両方を通じてMIUIテーマを自由に共有するウェブサイトです。480,000以上のMIUIテーマを収集した広範なコレクションを提供しております。当サイト�...</p>
+    </div><div class='border-bottom'>
+    <p><a href='/post/31'>Die Vollständigste Sammlung von MIUI-Themen</a></p>
+    <p class='blog-post-meta link-secondary'>
+        Sep 27, 2023 23:30
+        </p>
+    <p>MTZFILE ist eine Website, die MIUI-Themen sowohl über offizielle Zhuti-Links als auch über Direktlinks frei teilt und eine umfangreiche Sammlung von über 480.000 MIUI-Themen bietet. Wir bieten eine riesige Sammlung von MIUI-Themen, Hintergrundbild...</p>
+    </div><div class='border-bottom'>
+    <p><a href='/post/30'>Coleções de Temas MIUI Mais Completas</a></p>
+    <p class='blog-post-meta link-secondary'>
+        Sep 27, 2023 23:27
+        </p>
+    <p>O MTZFILE é um site que compartilha gratuitamente temas MIUI por meio de links oficiais Zhuti e links diretos, oferecendo uma extensa coleção de mais de 480.000 temas MIUI. Oferecemos uma vasta coleção de Temas MIUI, Papéis de Parede, Fontes e ...</p>
+    </div><div class='border-bottom'>
+    <p><a href='/post/29'>أكبر مجموعات نسخ MIUI المكتملة</a></p>
+    <p class='blog-post-meta link-secondary'>
+        Sep 27, 2023 23:09
+        </p>
+    <p>MTZFILE هو موقع يقدم بحرية نسخ MIUI عبر روابط Zhuti الرسمية وروابط مباشرة، ويقدم مجموعة واسعة تحتوي على أكثر من 480,000 نسخة MIUI. نحن نقدم مجموعة ضخمة �...</p>
+    </div><div class='border-bottom'>
+    <p><a href='/post/28'>Les Collections de Thèmes MIUI les Plus Complètes</a></p>
+    <p class='blog-post-meta link-secondary'>
+        Sep 27, 2023 14:12
+        </p>
+    <p>MTZFILE est un site web qui partage gratuitement des thèmes MIUI à la fois via des liens Zhuti officiels et des liens directs, offrant une vaste collection de plus de 480 000 thèmes MIUI. Nous proposons une vaste collection de thèmes MIUI, de fon...</p>
+    </div><div class='border-bottom'>
+    <p><a href='/post/27'>Koleksi Tema MIUI Terlengkap</a></p>
+    <p class='blog-post-meta link-secondary'>
+        Sep 27, 2023 14:01
+        </p>
+    <p>MTZFILE adalah situs web yang membagikan tema MIUI secara gratis melalui tautan resmi Zhuti dan tautan langsung, menyediakan koleksi lebih dari 480.000 tema MIUI.Kami menawarkan beragam tema MIUI, wallpaper, font, dan nada dering dengan lebih dari 48...</p>
+    </div><div class='border-bottom'>
+    <p><a href='/post/26'>आपके MIUI थीम का स्रोत</a></p>
+    <p class='blog-post-meta link-secondary'>
+        Sep 27, 2023 13:06
+        </p>
+    <p>MTZFILE एक वेबसाइट है जो MIUI थीम को आधिकारिक Zhuti लिंक्स और सीधे लिंक्स के माध्यम से मुफ्त में साझा करता ह...</p>
+    </div><div class='border-bottom'>
+    <p><a href='/post/25'>Tu Fuente de Temas MIUI</a></p>
+    <p class='blog-post-meta link-secondary'>
+        Sep 27, 2023 13:01
+        </p>
+    <p>MTZFILE es un sitio web que comparte libremente temas MIUI a través de enlaces oficiales de Zhuti y enlaces directos, ofreciendo una extensa colección de más de 480,000 temas MIUI. Ofrecemos una vasta colección de Temas MIUI, Fondos de Pantalla, ...</p>
+    </div>
+  </div></div>
+  
+     </div>
+   
+   
+   
+</div>
+</section>
+<div class="justify-content-center text-center"><iframe data-aa='2184195' src='//ad.a-ads.com/2184195?size=300x250' style='width:300px; height:250px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
+
+</div> 
+<footer class="my-5 pt-5 text-muted text-center text-small">
+
+    
+    
+    <div class="mt-1 mb-1"><ul class="list-inline">
+        <li class="list-inline-item"><a href="/about-us/">About Us</a></li>
+      <li class="list-inline-item"><a href="/privacy/">Privacy and Policy</a></li>
+      <li class="list-inline-item"><a href="/contact/">Contact Us</a></li>
+      <li class="list-inline-item"><a href="/disclaimer/">Disclaimer</a></li>
+      <li class="list-inline-item"><a href="/terms/">Terms Of Service</a></li>
+      <li class="list-inline-item"><a href="/guide/">Guide</a></li>
+      
+      
+  
+    </ul></div>
+   <a href="https://www.dmca.com/compliance/mtzfile.pw" title="DMCA Compliance information for mtzfile.pw"><img src="https://www.dmca.com/img/dmca-compliant-grayscale.png" alt="DMCA compliant image" /></a>
+    <h4 class="mb-1 mt-2">© 2023 MTZFILE MIUI Theme Store</h4>
+    <span id="ccode"></span>.IN<a class="rbot text-right justify-content-end bg-warning" href="#top" style="display: inline;"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+  </footer>
+<script src="https://www.mtzfile.pw/thm/js/bootstrap.bundle.min.js"></script>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script>
+function copyText(inputId, buttonId) {
+  // Mendapatkan elemen input teks dan tombol "Copy" dengan ID yang diberikan
+  var input = document.getElementById(inputId);
+  var button = document.getElementById(buttonId);
+
+  // Menyalin teks dari elemen input ke clipboard
+  input.select();
+  document.execCommand("copy");
+
+  // Mengubah tombol "Copy" menjadi "Copied" selama 3 detik
+  button.innerHTML = "Copied";
+  setTimeout(function() {
+    button.innerHTML = "Copy";
+  }, 3000);
+}
+
+
+
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon='{"rayId":"81d013563c733b8b","r":1,"version":"2023.10.0","token":"2f38c429c8d343b3a1e958f691ee9df3"}' crossorigin="anonymous"></script>
+</body></html>
